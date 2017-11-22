@@ -9,7 +9,7 @@ app.use(express.static('data'));
 server.listen(8000);
 
 // Read serial port
-const sp = new serialport.SerialPort('/dev/tty.usbmodem1411');
+const sp = new serialport('/dev/tty.usbmodem1411');
 sp.on('data', function(input){
     io.sockets.emit('data', input);
 });
