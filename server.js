@@ -2,7 +2,7 @@ const serialport = require('serialport');
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
-const io = require('socket.io')(server);
+const io = require('socket.io')(server, {path: '/'});
 
 // Webserver
 app.use(express.static('data'));

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
+    <head>
         <title>Emoji Spammer</title>
 
         <meta name="author" content="Gergely Nagy">
@@ -16,14 +16,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1">
         <meta name="msapplication-tap-highlight" content="no">
 
-        <link rel="stylesheet" href="data/css/index.css">
-  </head>
+        <link rel="stylesheet" href="index.css">
+    </head>
 
-  <body>
-        <div id="emoji">
-            <object class="noselect" type="image/svg+xml" data="data/img/01.svg"></object>
+    <body>
+        <div id="emojiWrapper">
+            <object id="emoji" class="noselect" type="image/svg+xml" data="img/01.svg"></object>
         </div>
 
-  </body>
-
+        <script src="socket.io.js"></script>
+    </body>
 </html>

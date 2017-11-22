@@ -8,13 +8,12 @@ body{
     font: 18px "Open Sans", sans-serif;
     background-color: #171717;
     color: #171717;
-
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#emoji {
+#emojiWrapper{
     width: 30vw;
     height: 30vw;
 }
