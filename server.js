@@ -1,15 +1,16 @@
-const serialport = require('serialport');
+const SerialPort = require('serialport');
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
-const io = require('socket.io')(server, {path: '/'});
+const io = require('socket.io')(server, {path: '/io'});
 
 // Webserver
 app.use(express.static('data'));
 server.listen(8000);
 
 // Read serial port
-const sp = new serialport('/dev/tty.usbmodem1411');
-sp.on('data', function(input){
-    io.sockets.emit('data', input);
-});
+const sp = new SerialPort('COM4');
+const parser = new SerialPort.parsers.Readline();
+
+sp.pipe(parser);
+parser.on('data', console.log);
