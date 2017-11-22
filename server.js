@@ -11,13 +11,5 @@ server.listen(8000);
 // Read serial port
 const sp = new serialport.SerialPort('/dev/tty.usbmodem1411');
 sp.on('data', function(input){
-    console.log(input);
-});
-
-// Socket.io
-io.on('connection', function(socket){
-    socket.emit('news', {hello: 'world'});
-    socket.on('my other event', function(data){
-        console.log(data);
-    });
+    io.sockets.emit('data', input);
 });
